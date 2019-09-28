@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- react, react-dom 참조 -->
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+</head>
+
+<body>
+
+    <!-- 리액트 엘리먼트를 추가할 위치 -->
+    <div id="content"></div>
+
+    <!-- 리액트 엘리먼트를 생성하여, DOM에 추가 -->
+    <script type="text/javascript">
+        // React.createElement(component_name, props, ...children)
+        const h1 = React.createElement('h1', null, 'Hello, world!');
+
+        class HelloWorld extends React.Component {
+
+            // 사용자 정의 컴포넌트나 HTML 태그로 만든 React 엘리먼트를 반환해야 함
+            render() {
+                return React.createElement('div', null, h1, h1);
+            }
+        }
+
+        const helloWorld = React.createElement(HelloWorld, null);
+
+        // ReactDOM.render(element, container[, callback])
+        ReactDOM.render(helloWorld, document.getElementById('content'));
+    </script>
+
+</body>
+
+</html>

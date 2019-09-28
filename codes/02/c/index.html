@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- react, react-dom 참조 -->
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+</head>
+
+<body>
+
+    <!-- 리액트 엘리먼트를 추가할 위치 -->
+    <div id="content"></div>
+
+    <!-- 리액트 엘리먼트를 생성하여, DOM에 추가 -->
+    <script type="text/javascript">
+        class HelloWorld extends React.Component {
+
+            // 속성을 활용하여 동적으로 엘리먼트를 렌더링
+            render() {
+
+                const {
+                    framework
+                } = this.props;
+
+                return React.createElement('h1', this.props, `Hello ${framework} world !`);
+            }
+        }
+
+        // ReactDOM.render(element, container[, callback])
+        ReactDOM.render(
+            React.createElement(
+                'div',
+                null,
+                React.createElement(HelloWorld, {
+                    id: 'ember',
+                    framework: 'Ember.js',
+                    title: 'A Framework for create ambitiious web applications.'
+                }),
+                React.createElement(HelloWorld, {
+                    id: 'backbone',
+                    framework: 'Backbone.js',
+                    title: 'Backbone.js gives structure to web applications ...'
+                }),
+                React.createElement(HelloWorld, {
+                    id: 'angular',
+                    framework: 'Ember.js',
+                    title: 'Superheroic JavaScript MVW framework.'
+                }),
+            ),
+            document.getElementById('content')
+        );
+
+    </script>
+
+</body>
+
+</html>

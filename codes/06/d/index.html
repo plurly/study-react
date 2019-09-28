@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"/>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+</head>
+
+<body>
+
+    <!-- 리액트 엘리먼트를 추가할 위치 -->
+    <div id="content"></div>
+
+    <!-- 리액트 외부의 컴포넌트 -->
+    <div id="slider"></div>
+
+    <script src="bundle/script.js"></script>
+    <script>
+
+        $(function() {
+
+            let handleChange = (e, ui) => {
+
+                // jQuery 이벤트를 React 커스텀 이벤트로 래핑
+                let slideEvent = new CustomEvent('slide', {
+                    detail: {
+                        ui: ui,
+                        jQueryEvent: e
+                    }
+                });
+
+                // React 커스텀 이벤트 전송
+                window.dispatchEvent(slideEvent)
+            };
+
+            // jQuery 이벤트 리스너 호출 시, 커스텀 이벤트 전송할 수 있도록 연동
+            $('#slider').slider({
+                'change': handleChange,
+                'slide': handleChange
+            });
+      })
+    </script>
+
+</body>
+
+</html>
