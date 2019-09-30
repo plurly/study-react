@@ -18,3 +18,4 @@
 - [5. React 컴포넌트의 라이프사이클 이벤트](documents/05.md)
 - [6. React에서 이벤트 다루기](documents/06.md)
 - [7. React에서 폼 다루기](documents/07.md)
+- [8. 확장성을 고려한 React 컴포넌트](documents/08.md)
