@@ -24,3 +24,4 @@
 - [11. 프로젝트 : Timer 컴포넌트](documents/11.md)
 - [12. Webpack 빌드 도구](documents/12.md)
 - [13. React 라우팅](documents/13.md)
+- [14. Redux를 이용한 데이터 다루기](documents/14.md)
