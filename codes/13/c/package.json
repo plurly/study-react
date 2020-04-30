@@ -15,7 +15,7 @@
 		"babel-loader": "^8.0.6",
 		"backbone": "^1.4.0",
 		"css-loader": "^3.2.0",
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"react": "^16.10.2",
 		"react-dom": "^16.10.2",
 		"react-hot-loader": "^4.12.14",
